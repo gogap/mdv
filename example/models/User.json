@@ -1,0 +1,10 @@
+{
+	"name":"User",
+	"fields":[{
+		"name":"Id",
+		"type":"int"
+	},{
+		"name":"Name",
+		"type":"string"
+	}]
+}

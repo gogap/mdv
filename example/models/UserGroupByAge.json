@@ -1,0 +1,10 @@
+{
+	"name":"UserGroupByAge",
+	"fields":[{
+		"name":"Age",
+		"type":"string"
+	},{
+		"name":"Count",
+		"type":"int"
+	}]
+}

@@ -1,0 +1,34 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <script src="https://g.alicdn.com/bizcharts/io-asserts/3.1.2/react16.0.0.production.min.js"></script>
+    <script src="https://g.alicdn.com/bizcharts/io-asserts/3.1.2/react-dom16.0.0.production.min.js"></script>
+    <script src="https://unpkg.com/babel-core@5.8.38/browser.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bizcharts@3.2.2/umd/BizCharts.min.js"> </script>
+    
+    
+  </head>
+  <body>
+      <div id="mountNode" ></div>
+      <script type="text/babel">
+        // var BizCharts = window.BizCharts;
+        // const Chart = BizCharts.Chart;
+        // const Axis = BizCharts.Axis;
+        // const Geom = BizCharts.Geom;
+        // const Tooltip = BizCharts.Tooltip;
+        const { Chart, Axis, Geom, Tooltip } = window.BizCharts;
+        const data = {{.model|toJson}};
+        const cols = {
+          'Count': {tickInterval: 5},
+        };
+        ReactDOM.render((
+          <Chart height={500} data={data} scale={cols} forceFit>
+            <Axis name="Age" />
+            <Axis name="Count" />
+            <Tooltip crosshairs="y"/>
+            <Geom type="interval" position="Age*Count" />
+          </Chart>
+        ), document.getElementById("mountNode"));
+    </script>
+  </body>
+</html>
